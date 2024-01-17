@@ -1,0 +1,33 @@
+body{
+	margin: 0;
+	font-family: 'SF Pro Display','-apple-system','BlinkMacSystemFont','San Francisco','Helvetica Neue','Helvetica','Ubuntu','Roboto','Noto','Segoe UI','Arial',sans-serif;
+	text-align: center;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 3rem;
+	background: #e0e0e0;
+}
+
+.message-yes{
+	display: none;
+}
+
+body[data-status="yes"]{
+	background: #fffff2;
+}
+body[data-status="yes"] .message-yes{
+	display: block;
+}
+body[data-status="yes"] .message-no{
+	display: none;
+}
+
+h1{
+	font-size: 3rem;
+}
+
+.time-indicator{
+	margin-top: 1em;
+}

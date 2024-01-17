@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Morning Glory: Open or Closed?</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<script src="weatherapi.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body data-mode="day" data-flower="closed">
+	<main>
+		<div id="flower">
+				<div class="base"></div>
+				<div class="petal"></div>
+				<div class="petal"></div>
+				<div class="petal"></div>
+				<div class="petal"></div>
+				<div class="petal"></div>
+				<div class="center"></div>
+		</div>
+		<div class="message">
+			<div id="status">Closed</div>
+			Current time: <time id="now"></time><br>
+			Nightfall: <time id="dusk"></time><br>
+			Bloom time: <time id="bloom"></time><br>
+			Closing time: <time id="close"></time><br>
+			Current temperature: <time id="temp"></time>
+		</div>
+	</main>
+</body>	
+</html>

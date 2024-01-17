@@ -1,0 +1,96 @@
+:root{
+	--color-bg: rgb( 0 0 0);
+	--color-txt: rgb( 255 255 255);
+	--color-base: rgb(110,110,255);
+	--color-petal: rgba(0,50,190,0.6);
+}
+
+[data-mode="beforedawn"]{
+	--color-bg: rgb(40 30 100);
+}
+
+[data-mode="day"]{
+	--color-bg: rgb(250 250 255);
+	--color-txt: rgb(100 100 100);
+}
+
+[data-mode="afterdusk"]{
+	--color-bg: rgb(0 0 0);
+}
+body{
+	background: var(--color-bg);
+	margin: 0;
+	font-family: 'SF Pro Display','-apple-system','BlinkMacSystemFont','San Francisco','Helvetica Neue','Helvetica','Ubuntu','Roboto','Noto','Segoe UI','Arial',sans-serif;
+	text-align: center;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--color-txt);
+}
+
+#flower{
+	position: relative;
+	height: 300px;
+	width: 300px;
+	transform: scale(0.2);
+	transition: transform 2s ease-in-out;
+}
+.base{
+	border-radius: 50%;
+	background: var(--color-base);
+	height: 295px;
+	width: 295px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.petal{
+	width: 0;
+	height: 0;
+	border-left: 100px solid transparent;
+	border-right: 130px solid transparent;
+	border-top: 150px solid var(--color-petal);
+	border-radius: 50%;
+	transform-origin: bottom center;
+	position: absolute;
+	top: 0;
+	left: 35px;
+	mix-blend-mode: multiply;
+}
+.petal:nth-child(2){
+	transform: rotate(72deg);
+}
+.petal:nth-child(3){
+	transform: rotate(144deg);
+}
+.petal:nth-child(4){
+	transform: rotate(216deg);
+}
+.petal:nth-child(5){
+	transform: rotate(288deg);
+}
+
+.center{
+	border-radius: 50%;
+	background: white;
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	filter: blur(20px);
+}
+
+.message{
+	margin-top: 3rem;
+	line-height: 1.5;
+}
+
+
+[data-flower="bloom"] #flower{
+	transform: scale(1);
+}
