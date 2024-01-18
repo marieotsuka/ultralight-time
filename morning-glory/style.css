@@ -1,8 +1,7 @@
 :root{
 	--color-bg: rgb( 0 0 0);
 	--color-txt: rgb( 255 255 255);
-	--color-base: rgb(110,110,255);
-	--color-petal: rgba(0,50,190,0.6);
+	--color-petal: rgba(150,200,255,0.6);
 }
 
 [data-mode="beforedawn"]{
@@ -27,13 +26,16 @@ body{
 	align-items: center;
 	justify-content: center;
 	color: var(--color-txt);
+
+	--red: 110;
+	--color-base: rgb(var(--red), 110, 255);
 }
 
 #flower{
 	position: relative;
 	height: 300px;
 	width: 300px;
-	transform: scale(0.2);
+	transform: scale(0.2) rotate(72deg);
 	transition: transform 2s ease-in-out;
 }
 .base{
@@ -90,7 +92,11 @@ body{
 	line-height: 1.5;
 }
 
+#temp{
+	color: var(--color-base);
+}
 
-[data-flower="bloom"] #flower{
-	transform: scale(1);
+
+[data-flower="open"] #flower{
+	transform: scale(1) rotate(0deg);
 }

@@ -6,12 +6,11 @@
 	<title>Morning Glory: Open or Closed?</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width">
-	<script src="weatherapi.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body data-mode="day" data-flower="closed">
 	<main>
-		<div id="flower">
+		<div id="flower" data-temp="">
 				<div class="base"></div>
 				<div class="petal"></div>
 				<div class="petal"></div>
@@ -21,13 +20,14 @@
 				<div class="center"></div>
 		</div>
 		<div class="message">
-			<div id="status">Closed</div>
-			Current time: <time id="now"></time><br>
-			Nightfall: <time id="dusk"></time><br>
-			Bloom time: <time id="bloom"></time><br>
-			Closing time: <time id="close"></time><br>
-			Current temperature: <time id="temp"></time>
+			We are <span id="status">...</span><br>
+
+			Currently: <time id="now">...</time>, Nightfall: <time id="dusk">...</time><br>
+			Open: <time id="bloom">...</time>, Close: <time id="close">...</time><br>
+
+			Current temperature: <time id="temp">...</time>
 		</div>
 	</main>
+	<script src="weatherapi.js"></script>
 </body>	
 </html>
