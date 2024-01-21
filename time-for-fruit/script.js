@@ -1,5 +1,7 @@
 console.log('hi! this is my script'); //this should show up on your console
 
+// console.log(x);
+console.log(document);
 //Date manipulations
 const now = new Date(); //this is a UTC date object
 
@@ -8,6 +10,7 @@ const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
 based on the IANA (Internet Assigned Numbers Authority) Timezone database
 https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 ---*/
+console.log('Now', now);
 console.log('Your timezone', tz);
 
 function showNYTime(date){
@@ -21,6 +24,8 @@ console.log('Now in NY', showNYTime(now));
 const nydate = new Date(showNYTime(now));
 // get difference between NY time and local timezone
 const diff = now.getTime() - nydate.getTime(); 
+console.log('diff', diff);
+
 function getNYTime(date) {
   // now we can use this time difference to convert local times to New York times
   return new Date(date.getTime() + diff);
@@ -35,7 +40,6 @@ const day2end = getNYTime( new Date('2024-01-21 16:00' ));
 const day3start = getNYTime( new Date('2024-01-28 13:00' ));
 const day3end = getNYTime( new Date('2024-01-28 17:00' ));
 
-
 window.addEventListener('load', function(){
   //ony run these scripts after the site contents have loaded
   //show current time in New York
@@ -43,6 +47,15 @@ window.addEventListener('load', function(){
   timeDiv.innerText = showNYTime(now);
   //if date is one of the dates
   let session = false;
+
+  // just check if it’s Sunday
+  // let dayOfWeek = now.getDay();
+  // if( dayOfWeek === 0){
+  //   //because 0 is Sunday, 6 is Saturday
+  //   session = true;
+  // }
+  // console.log( session );
+
   if( now > day1start && now < day1end ){
     console.log('week 1 workshop in session');
     session = true    
