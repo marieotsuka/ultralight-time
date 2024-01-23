@@ -34,7 +34,7 @@ Usually, you’ll want to keep your API Key in a repository
 "secret" instead of directly in your code for security reasons.
 ---------------------------------------------------*/
 function getWeatherData( lat, lon){
-	const appId = 'a0be2ca7d3101a5b3e8a3bbf580143f6';
+	const appId = 'a0be2ca7d3101a5b3e8a3bbf580143f6'; 
 	const	url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${appId}&units=imperial`;
 	fetch(url)
 		.then(response => response.json())
